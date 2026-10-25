@@ -11,18 +11,17 @@ function AboutMe() {
 						Good work starts with understanding people.
 					</h2>
 					<p className="about-text">
-						I’m a Software developer who enjoys turning ideas into websites &
-						apps that are clear, fast, and genuinely useful. I care about the
-						details—from a thoughtful layout to a button that feels right to
-						use.
+						I'm a Software Developer focused on turning ideas into fast, clear,
+						and genuinely useful web products. I care about the details — from
+						thoughtful layouts to buttons that just feel right.
 					</p>
 					<p className="about-text">
-						I build responsive interfaces for my projects and use React
-						framework for my frontend, PostgreSQL, Express, node.js for the
-						backend just few tech stack mentioned. and also flexible using
-						different softwares to make projects usefull scalable & satisfying.
-						and keep learning as the web evolves. My goal is to make products
-						that solve real problems and feel considered at every screen size.
+						I build responsive interfaces with React on the frontend and
+						Node.js, Express, and PostgreSQL on the backend, among other tools.
+						I’m flexible with my stack and choose what makes the product most
+						useful, scalable, and satisfying to use. I’m constantly learning as
+						the web evolves.My goal is simple: build products that solve real
+						problems and feel considered at every screen size.
 					</p>
 				</div>
 

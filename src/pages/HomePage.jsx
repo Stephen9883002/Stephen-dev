@@ -44,7 +44,7 @@ function HomePage() {
 				</Link>
 			</section>
 			<Process />
-			<Testimonials />
+			{/*  <Testimonials /> later i will uncommit it out */}
 			<SocialMedia />
 			<Contact />
 			<SupportBanner />

@@ -15,8 +15,8 @@ function Hero() {
 						<span className="text-accent">made for people.</span>
 					</h1>
 					<p className="hero-description">
-						I build responsive digital experiences with a focus on clear design,
-						accessible interfaces, and dependable code.
+						Specializing in responsive web development with an emphasis on clean
+						UI, accessibility,scalability and maintainable, dependable code.
 					</p>
 
 					<div className="hero-actions">

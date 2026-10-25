@@ -4,8 +4,9 @@
 .projects-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 32px;
+	gap: 20px;
 	width: 100%;
+	justify-content: center;
 }
 
 .project-card {

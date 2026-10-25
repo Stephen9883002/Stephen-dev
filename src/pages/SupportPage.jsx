@@ -24,10 +24,8 @@ function SupportPage() {
 					</div>
 					<h2 className="support-page-title">Why Support?</h2>
 					<p className="support-page-text">
-						I spend countless hours building open-source projects, writing
-						guides, and creating tools to make the web a better place. Your
-						contribution goes directly into hosting, domain renewals, and coffee
-						(lots of it).
+						Appreciate my work? Consider supporting — it means a lot and helps
+						me build more.
 					</p>
 
 					{/* Here we could embed the modal trigger or just a big button */}

@@ -20,36 +20,6 @@ function SupportModal({ isOpen, onClose, initialAmount = '' }) {
 
 	if (!isOpen) return null;
 
-	// const handleSupport = async (e) => {
-	// 	e.preventDefault();
-	// 	setError('');
-
-	// 	if (!amount || amount < 100) {
-	// 		setError('Please enter a valid amount (min ₦100).');
-	// 		return;
-	// 	}
-	// 	if (!email) {
-	// 		setError('Please enter your email address.');
-	// 		return;
-	// 	}
-
-	// 	setIsProcessing(true);
-
-	// 	try {
-	// 		// WE WILL CONNECT THIS TO THE BACKEND LATER
-	// 		console.log('Initiating payment for:', { amount, email, name });
-
-	// 		// Simulating a network request for now
-	// 		setTimeout(() => {
-	// 			alert('This will soon redirect to Paystack!');
-	// 			setIsProcessing(false);
-	// 			onClose();
-	// 		}, 1000);
-	// 	} catch (err) {
-	// 		setError('Something went wrong. Please try again.');
-	// 		setIsProcessing(false);
-	// 	}
-	// };
 	const handleSupport = async (e) => {
 		e.preventDefault();
 		setError('');
