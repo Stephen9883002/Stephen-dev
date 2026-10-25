@@ -1,0 +1,75 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+	/* Your index.css variables (with premium fallbacks) */
+	--paper: #faf9f6;
+	--ink: #111827;
+	--font-body: 'DM Sans', sans-serif;
+	--font-heading: 'DM Serif Display', serif;
+
+	/* New UI Colors */
+	--ink-light: #4b5563;
+	--border-color: #e5e7eb;
+	--accent-color: #b56c50; /* A warm terracotta/copper to match the "made for people" text */
+	--nav-bg: rgba(255, 255, 255, 0.85);
+	--btn-dark: #1f2937;
+	--btn-dark-hover: #111827;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	min-width: 320px;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-width: 320px;
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-body);
+	-webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+	font: inherit;
+}
+
+::selection {
+	background: #e8c7b9;
+	color: var(--ink);
+}
+
+.app-shell {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.main-content {
+	flex: 1;
+}
+
+/* Material Icons alignment */
+.material-icons-sharp {
+	font-family: 'Material Icons Sharp';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+}

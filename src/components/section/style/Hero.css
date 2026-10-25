@@ -1,0 +1,357 @@
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero-section {
+	position: relative;
+	padding: 80px 20px 120px;
+	display: flex;
+	justify-content: center;
+}
+
+#mobile {
+	display: none;
+}
+
+.hero-container {
+	width: 100%;
+	max-width: 1100px;
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	align-items: center;
+	gap: 60px;
+}
+
+.hero-eyebrow {
+	display: inline-block;
+	font-size: 0.7rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--ink-light);
+	margin-bottom: 60px;
+	margin-top: -50px;
+}
+
+.hero-title {
+	font-family: sans-serif;
+	font-size: 35px;
+	line-height: 1.05;
+	font-weight: 700;
+	color: var(--ink);
+	margin-bottom: 24px;
+}
+
+.text-accent {
+	color: var(--accent-color);
+	font-style: italic;
+}
+
+.hero-description {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: var(--ink-light);
+	margin-bottom: 40px;
+	max-width: 90%;
+}
+
+/* Buttons */
+.hero-actions {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 16px 32px;
+	border-radius: 50px;
+	font-weight: 600;
+	font-size: 1rem;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.btn .material-icons-sharp {
+	font-size: 20px;
+}
+
+.btn-primary {
+	background-color: var(--btn-dark);
+	color: #ffffff;
+	border: 1px solid var(--btn-dark);
+}
+
+.btn-primary:hover {
+	background-color: var(--btn-dark-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+	background-color: transparent;
+	color: var(--ink);
+	border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+	background-color: #ffffff;
+	border-color: var(--ink);
+	transform: translateY(-2px);
+}
+/* ... (Keep your top variables and reset here) ... */
+
+/* =========================================
+   HERO VISUALS (Fixed)
+   ========================================= */
+.hero-visual {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	/* Limit the maximum size of the whole visual block */
+	max-width: 420px;
+	margin: 0 auto;
+}
+
+.visual-backdrop {
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	background: radial-gradient(
+		circle,
+		rgba(232, 199, 185, 0.4) 0%,
+		transparent 60%
+	);
+	border-radius: 50%;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.visual-frame {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	/* Classic 3:4 portrait ratio */
+	aspect-ratio: 3 / 4;
+	/* A modern, elegant rounded rectangle (squircle) */
+	border-radius: 40px;
+	border: 1px solid var(--border-color);
+	padding: 10px; /* Creates the white border effect */
+	background: #ffffff;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+	/* CRITICAL: This keeps the image inside the rounded corners */
+	overflow: hidden;
+}
+
+.portrait-img {
+	width: 100%;
+	height: 100%;
+	/* 'cover' ensures the photo fills the frame without stretching */
+	object-fit: cover;
+	/* Slightly smaller radius than the frame for a perfect fit */
+	border-radius: 32px;
+	background-color: #f3f4f6;
+	/* Position the image to focus on the upper body/face */
+	object-position: top center;
+}
+
+.floating-tag {
+	position: absolute;
+	bottom: 20px;
+	right: -20px;
+	z-index: 3;
+	background: #ffffff;
+	padding: 12px 20px;
+	border-radius: 50px;
+	font-weight: 500;
+	font-size: 0.9rem;
+	color: var(--ink);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	border: 1px solid var(--border-color);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.status-dot {
+	width: 10px;
+	height: 10px;
+	background-color: #10b981;
+	border-radius: 50%;
+	box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Updates for the visual)
+   ========================================= */
+@media (max-width: 992px) {
+	.hero-container {
+		grid-template-columns: 1fr;
+		text-align: center;
+		gap: 60px;
+	}
+
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+	}
+
+	.hero-description {
+		max-width: 100%;
+	}
+
+	.hero-visual {
+		max-width: 320px; /* Smaller on tablets */
+	}
+
+	.floating-tag {
+		right: 0; /* Keep it from hanging off screen on mobile */
+	}
+
+	@media (max-width: 576px) {
+		.hero-section {
+			padding: 40px 20px 80px;
+		}
+
+		.hero-title {
+			font-size: 2.6rem;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.btn {
+			width: 100%;
+		}
+
+		.hero-visual {
+			max-width: 280px; /* Even smaller on phones */
+		}
+
+		.visual-frame {
+			border-radius: 30px;
+		}
+
+		.portrait-img {
+			border-radius: 24px;
+		}
+
+		.floating-tag {
+			bottom: -15px;
+			right: 50%;
+			transform: translateX(50%); /* Center it at the bottom on mobile */
+			white-space: nowrap;
+		}
+	}
+	/* Navbar Mobile */
+	.hamburger {
+		display: flex;
+	}
+
+	.nav-floating {
+		padding: 10px 10px 10px 20px;
+	}
+
+	.nav-menu {
+		position: absolute;
+		top: 90px;
+		left: 20px;
+		right: 20px;
+		background: #ffffff;
+		flex-direction: column;
+		padding: 24px;
+		border-radius: 24px;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+		border: 1px solid var(--border-color);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-10px);
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.nav-menu.is-open {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	.nav-links {
+		flex-direction: column;
+		width: 100%;
+		gap: 12px;
+	}
+
+	.nav-link {
+		width: 100%;
+		justify-content: center;
+		font-size: 1.1rem;
+		padding: 14px;
+	}
+
+	.nav-cta {
+		margin-top: 24px;
+		width: 100%;
+		justify-content: center;
+		padding: 16px;
+	}
+
+	/* Hamburger Animation */
+	.hamburger.open .bar:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+	.hamburger.open .bar:nth-child(2) {
+		opacity: 0;
+	}
+	.hamburger.open .bar:nth-child(3) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+}
+
+@media (max-width: 576px) {
+	.hero-section {
+		padding: 40px 20px 80px;
+	}
+
+	.hero-title {
+		font-size: 2.6rem;
+	}
+
+	.hero-actions {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	.floating-tag {
+		bottom: -15px;
+		right: 50%;
+		transform: translateX(50%);
+		white-space: nowrap;
+	}
+	.btn-outline {
+		display: none;
+		background-color: transparent;
+		color: var(--ink);
+		border: 1px solid var(--border-color);
+	}
+	#mobile {
+		display: flex;
+	}
+}

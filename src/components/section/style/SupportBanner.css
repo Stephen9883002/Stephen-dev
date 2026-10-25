@@ -1,0 +1,75 @@
+.support-banner-section {
+	width: 100%;
+	padding: 40px 20px;
+	background-color: #ffffff;
+	border-top: 1px solid var(--border-color);
+}
+
+.support-banner-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+}
+
+.support-banner-title {
+	font-family: var(--font-body);
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--ink);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
+}
+
+.heart-icon {
+	color: #f59e0b; /* Amber/Gold heart */
+	font-size: 24px !important;
+}
+
+.support-banner-desc {
+	max-width: 500px;
+	color: var(--ink-light);
+	font-size: 0.95rem;
+}
+
+.support-banner-right {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.price-pill {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	padding: 10px 20px;
+	border-radius: 50px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--ink);
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.price-pill:hover {
+	border-color: var(--ink);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.other-btn {
+	background: #fcfaf6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.support-banner-container {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+	}
+}

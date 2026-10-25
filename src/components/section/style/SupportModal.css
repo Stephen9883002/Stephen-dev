@@ -1,0 +1,237 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(17, 24, 39, 0.6); /* Dark semi-transparent */
+	backdrop-filter: blur(8px); /* Premium blur effect */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	padding: 20px;
+	animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+	background: #ffffff;
+	width: 100%;
+	max-width: 450px;
+	border-radius: 24px;
+	padding: 32px;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	animation: slideUp 0.3s ease-out;
+}
+
+/* Header */
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 24px;
+}
+
+.modal-title {
+	font-family: var(--font-heading);
+	font-size: 1.6rem;
+	color: var(--ink);
+	margin-bottom: 4px;
+}
+
+.modal-subtitle {
+	font-size: 0.9rem;
+	color: var(--ink-light);
+	line-height: 1.4;
+}
+
+.modal-close {
+	background: #f3f4f6;
+	border: none;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: var(--ink-light);
+	transition: background 0.2s;
+}
+
+.modal-close:hover {
+	background: #e5e7eb;
+	color: var(--ink);
+}
+
+/* Form */
+.support-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.form-error {
+	background: #fee2e2;
+	color: #b91c1c;
+	padding: 12px;
+	border-radius: 8px;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.form-label {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.optional {
+	color: var(--ink-light);
+	font-weight: 400;
+}
+
+/* Amount Input */
+.amount-input-wrapper {
+	display: flex;
+	align-items: center;
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	background: #fcfaf6;
+	transition: all 0.2s ease;
+	overflow: hidden; /* Keeps the currency symbol inside the rounded corners */
+}
+.amount-input-wrapper:focus-within {
+	border-color: var(--ink);
+	background: #ffffff;
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.currency-symbol {
+	padding-left: 16px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--ink-light);
+	display: flex;
+	align-items: center;
+}
+
+.form-input {
+	width: 100%;
+	padding: 14px 16px;
+	border-radius: 10px;
+	border: 1px solid var(--border-color);
+	background: #fcfaf6;
+	font-family: var(--font-body);
+	font-size: 1rem;
+	color: var(--ink);
+	transition: all 0.2s ease;
+}
+
+.amount-input {
+	border: none !important; /* Remove border from the input itself */
+	background: transparent !important; /* Let the wrapper handle the background */
+	padding: 14px 16px 14px 8px !important; /* Adjust padding */
+	box-shadow: none !important; /* Remove focus shadow from input */
+	width: 100%;
+}
+.amount-input:focus {
+	box-shadow: none !important;
+	background: transparent !important;
+}
+
+.form-input:focus {
+	outline: none;
+	border-color: var(--ink);
+	background: #ffffff;
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Quick Amounts */
+.quick-amounts {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.quick-amount-btn {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	padding: 6px 12px;
+	border-radius: 50px;
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--ink-light);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.quick-amount-btn:hover {
+	border-color: var(--ink);
+	color: var(--ink);
+}
+
+.quick-amount-btn.active {
+	background: var(--ink);
+	color: #ffffff;
+	border-color: var(--ink);
+}
+
+/* Submit Button */
+.support-submit-btn {
+	background: var(--btn-dark);
+	color: #ffffff;
+	border: none;
+	padding: 16px;
+	border-radius: 12px;
+	font-size: 1rem;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	cursor: pointer;
+	transition: background 0.2s;
+	margin-top: 10px;
+}
+
+.support-submit-btn:hover {
+	background: var(--btn-dark-hover);
+}
+
+.support-submit-btn:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.support-submit-btn .material-icons-sharp {
+	font-size: 18px;
+	color: #fbbf24; /* Gold heart */
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

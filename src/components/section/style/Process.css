@@ -1,0 +1,119 @@
+.process-section {
+	width: 100%;
+	padding: 120px 20px;
+	background-color: #ffffff; /* White contrast against the paper background */
+	display: flex;
+	justify-content: center;
+	border-top: 1px solid var(--border-color);
+	border-bottom: 1px solid var(--border-color);
+}
+
+.process-container {
+	width: 100%;
+	max-width: 1100px;
+}
+
+.process-header {
+	text-align: center;
+	max-width: 700px;
+	margin: 0 auto 80px;
+}
+
+.process-subtitle {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: var(--ink-light);
+	margin-top: 16px;
+}
+
+.process-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+	position: relative;
+}
+
+/* A subtle connecting line between the cards */
+.process-grid::before {
+	content: '';
+	position: absolute;
+	top: 40px;
+	left: 10%;
+	right: 10%;
+	height: 1px;
+	background: dashed 1px var(--border-color);
+	z-index: 0;
+}
+
+.process-card {
+	position: relative;
+	z-index: 1;
+	background: var(--paper);
+	padding: 40px 32px;
+	border-radius: 24px;
+	border: 1px solid var(--border-color);
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+	border-color: var(--accent-color);
+}
+
+.process-card-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+.process-number {
+	font-family: var(--font-heading);
+	font-size: 2.5rem;
+	color: var(--accent-color);
+	opacity: 0.4;
+	line-height: 1;
+}
+
+.process-icon-wrapper {
+	width: 48px;
+	height: 48px;
+	background: #ffffff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--ink);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.process-icon-wrapper .material-icons-sharp {
+	font-size: 24px;
+}
+
+.process-title {
+	font-family: var(--font-body);
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: var(--ink);
+	margin-bottom: 12px;
+}
+
+.process-desc {
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: var(--ink-light);
+}
+
+@media (max-width: 992px) {
+	.process-grid {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+	.process-grid::before {
+		display: none; /* Hide the line on mobile */
+	}
+}

@@ -1,0 +1,156 @@
+.social-section {
+	width: 100%;
+	padding: 100px 20px;
+	display: flex;
+	justify-content: center;
+	/* Optional: Subtle radial background to match your reference */
+	background: radial-gradient(
+		circle at 50% 0%,
+		rgba(232, 199, 185, 0.15) 0%,
+		transparent 50%
+	);
+}
+
+.social-container {
+	width: 100%;
+	max-width: 900px; /* Keeps the 2-column grid nicely sized */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Header */
+.social-header {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.social-badge {
+	display: inline-block;
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	padding: 8px 16px;
+	border-radius: 50px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: var(--ink-light);
+	margin-bottom: 20px;
+}
+
+.social-title {
+	font-family: var(--font-heading);
+	font-size: 3rem;
+	line-height: 1.1;
+	font-weight: 400;
+	color: var(--ink);
+	margin-bottom: 16px;
+}
+
+.social-subtitle {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: var(--ink-light);
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+/* Grid */
+.social-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
+	gap: 16px;
+	width: 100%;
+}
+
+/* Social Cards */
+.social-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #ffffff;
+	padding: 20px 24px;
+	border-radius: 100px; /* Pill shape */
+	border: 1px solid var(--border-color);
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.social-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+.social-card-left {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.social-icon-wrapper {
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: #f3f4f6;
+	color: var(--ink);
+	transition: all 0.3s ease;
+}
+
+.social-svg {
+	width: 18px;
+	height: 18px;
+}
+
+.social-name {
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.social-arrow {
+	font-size: 18px !important;
+	color: var(--ink-light);
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+
+.social-card:hover .social-arrow {
+	opacity: 1;
+	transform: translate(2px, -2px);
+	color: var(--ink);
+}
+
+/* Brand Colors on Hover */
+.social-card:hover .instagram {
+	background: #e1306c;
+	color: white;
+}
+.social-card:hover .github {
+	background: #333;
+	color: white;
+}
+.social-card:hover .linkedin {
+	background: #0077b5;
+	color: white;
+}
+.social-card:hover .tiktok {
+	background: #000000;
+	color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.social-grid {
+		grid-template-columns: 1fr; /* 1 column on mobile */
+	}
+	.social-title {
+		font-size: 2.4rem;
+	}
+	.social-section {
+		padding: 60px 20px;
+	}
+}

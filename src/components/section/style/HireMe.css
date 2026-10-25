@@ -1,0 +1,304 @@
+.hire-section {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 0 20px 100px;
+}
+
+.hire-card {
+	width: 100%;
+	max-width: 1100px;
+	background: #ffffff;
+	border-radius: 32px;
+	border: 1px solid var(--border-color);
+	box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+	padding: 50px;
+}
+
+.hire-form {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 60px;
+}
+
+/* Divider line between columns */
+.hire-col-right {
+	border-left: 1px solid var(--border-color);
+	padding-left: 60px;
+}
+
+/* General Form Styles */
+.form-group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 28px;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+}
+
+.form-label {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--ink);
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.form-sublabel {
+	font-size: 0.85rem;
+	color: var(--ink-light);
+	margin-bottom: 12px;
+	margin-top: -6px;
+}
+
+.form-input,
+.form-textarea {
+	width: 100%;
+	padding: 16px;
+	border-radius: 12px;
+	border: 1px solid var(--border-color);
+	background: #fcfaf6;
+	font-family: var(--font-body);
+	font-size: 1rem;
+	color: var(--ink);
+	transition: all 0.2s ease;
+}
+
+.form-textarea {
+	min-height: 180px;
+	resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+	outline: none;
+	border-color: var(--ink);
+	background: #ffffff;
+	box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Custom Project Type Cards --- */
+.type-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+}
+
+.type-card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 16px;
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	background: #ffffff;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	text-align: left;
+}
+
+.type-card:hover {
+	border-color: #cbd5e1;
+	background: #f8fafc;
+}
+
+.type-card.active {
+	border-color: var(--accent-color);
+	background: rgba(232, 199, 185, 0.05);
+	box-shadow: 0 0 0 1px var(--accent-color);
+}
+
+.type-card-top {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.type-icon {
+	font-size: 20px !important;
+	color: var(--ink-light);
+}
+
+.type-card.active .type-icon {
+	color: var(--accent-color);
+}
+
+.type-radio {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 2px solid var(--border-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.type-card.active .type-radio {
+	border-color: var(--accent-color);
+}
+
+.type-card.active .type-radio::after {
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--accent-color);
+}
+
+.type-title {
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: var(--ink);
+	margin-bottom: 4px;
+}
+
+.type-desc {
+	font-size: 0.8rem;
+	color: var(--ink-light);
+	line-height: 1.4;
+}
+
+/* --- Checkbox (WhatsApp) --- */
+.checkbox-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 12px;
+	cursor: pointer;
+}
+
+.checkbox-wrapper input {
+	display: none; /* Hide default checkbox */
+}
+
+.checkbox-custom {
+	width: 20px;
+	height: 20px;
+	border-radius: 6px;
+	border: 1px solid var(--border-color);
+	background: #fcfaf6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+}
+
+.checkbox-custom .material-icons-sharp {
+	font-size: 14px;
+	color: white;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.checkbox-wrapper input:checked + .checkbox-custom {
+	background: var(--accent-color);
+	border-color: var(--accent-color);
+}
+
+.checkbox-wrapper input:checked + .checkbox-custom .material-icons-sharp {
+	opacity: 1;
+}
+
+.checkbox-text {
+	font-size: 0.9rem;
+	color: var(--ink);
+	font-weight: 500;
+}
+
+/* --- Contact Preferences (WhatsApp / Email / Phone) --- */
+.prefs-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.pref-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 12px;
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	background: #ffffff;
+	color: var(--ink-light);
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.pref-btn .material-icons-sharp {
+	font-size: 18px !important;
+}
+
+.pref-btn:hover {
+	border-color: #cbd5e1;
+}
+
+.pref-btn.active {
+	border-color: var(--accent-color);
+	color: var(--accent-color);
+	background: rgba(232, 199, 185, 0.05);
+}
+
+/* Submit Button */
+.submit-btn {
+	width: 100%;
+	background: var(--btn-dark);
+	color: #ffffff;
+	border: none;
+	padding: 18px;
+	border-radius: 12px;
+	font-size: 1rem;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-top: 10px;
+}
+
+.submit-btn:hover {
+	background: var(--btn-dark-hover);
+	transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+	.hire-card {
+		padding: 30px;
+	}
+	.hire-form {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+	.hire-col-right {
+		border-left: none;
+		border-top: 1px solid var(--border-color);
+		padding-left: 0;
+		padding-top: 40px;
+	}
+}
+
+@media (max-width: 576px) {
+	.type-grid {
+		grid-template-columns: 1fr;
+	}
+	.prefs-grid {
+		grid-template-columns: 1fr;
+	}
+	.hire-card {
+		padding: 24px 20px;
+	}
+}

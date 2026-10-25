@@ -1,0 +1,68 @@
+.support-success-container {
+	width: 100%;
+	min-height: 60vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+}
+
+.success-card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 24px;
+	padding: 60px 40px;
+	max-width: 500px;
+	text-align: center;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.success-card h2 {
+	font-family: var(--font-heading);
+	font-size: 2rem;
+	color: var(--ink);
+	margin-bottom: 16px;
+}
+
+.success-card p {
+	color: var(--ink-light);
+	line-height: 1.6;
+	margin-bottom: 12px;
+}
+
+.ref-text {
+	font-size: 0.9rem;
+	background: #fcfaf6;
+	padding: 12px;
+	border-radius: 8px;
+	margin-top: 20px;
+}
+
+.success-icon .material-icons-sharp {
+	font-size: 64px;
+	color: #10b981; /* Green */
+	margin-bottom: 20px;
+}
+
+.error-icon .material-icons-sharp {
+	font-size: 64px;
+	color: #ef4444; /* Red */
+	margin-bottom: 20px;
+}
+
+/* Simple Spinner */
+.spinner {
+	width: 50px;
+	height: 50px;
+	border: 4px solid #e5e7eb;
+	border-top-color: var(--accent-color);
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	margin: 0 auto 24px;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

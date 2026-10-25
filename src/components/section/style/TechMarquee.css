@@ -1,0 +1,105 @@
+.tech-marquee-section {
+	width: 100%;
+	background-color: #111827;
+	padding: 40px 0;
+	overflow: hidden;
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-marquee-container {
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	/* Gradient masks to fade the edges out smoothly */
+	mask-image: linear-gradient(
+		to right,
+		transparent,
+		black 10%,
+		black 90%,
+		transparent
+	);
+	-webkit-mask-image: linear-gradient(
+		to right,
+		transparent,
+		black 10%,
+		black 90%,
+		transparent
+	);
+}
+
+.marquee-track {
+	display: flex;
+	gap: 24px;
+	width: max-content;
+	animation: scrollMarquee 35s linear infinite;
+}
+
+/* Pause on hover so users can read the cards */
+.marquee-track:hover {
+	animation-play-state: paused;
+}
+
+.tech-card {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 16px 32px;
+	border-radius: 50px;
+	color: #f3f4f6;
+	transition: all 0.3s ease;
+	cursor: default;
+}
+
+.tech-card:hover {
+	background: rgba(255, 255, 255, 0.08);
+	transform: translateY(-2px);
+	border-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tech-icon {
+	font-size: 24px !important;
+	color: #e2c792; /* Your accent color */
+}
+
+.tech-name {
+	font-family: var(--font-body);
+	font-weight: 500;
+	font-size: 1.05rem;
+	letter-spacing: 0.5px;
+}
+
+@keyframes scrollMarquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-50% - 12px)); /* Accounts for the gap */
+	}
+}
+@media (max-width: 670px) {
+	.tech-marquee-section {
+		width: 100%;
+		background-color: #111827;
+		padding: 25px 0;
+		overflow: hidden;
+		border-top: 1px solid rgba(255, 255, 255, 0.05);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+	.tech-card {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		padding: 13px 28px;
+		border-radius: 50px;
+		color: #f3f4f6;
+		transition: all 0.3s ease;
+		cursor: default;
+	}
+}

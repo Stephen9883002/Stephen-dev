@@ -1,0 +1,119 @@
+/* =========================================
+   HOME PAGE ABOUT SECTION
+   ========================================= */
+.home-about-section {
+	padding: 100px 20px;
+	background-color: var(--paper);
+	display: flex;
+	justify-content: center;
+}
+
+.home-about-container {
+	width: 100%;
+	max-width: 1100px;
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+	gap: 80px;
+	align-items: start;
+}
+
+.about-eyebrow {
+	display: inline-block;
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--ink-light);
+	margin-bottom: 16px;
+}
+
+.about-title {
+	font-family: var(--font-heading);
+	font-size: 3.2rem;
+	line-height: 1.1;
+	font-weight: 400;
+	color: var(--ink);
+	margin-bottom: 32px;
+	letter-spacing: -0.5px;
+}
+
+.about-text {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: var(--ink-light);
+	margin-bottom: 24px;
+}
+
+/* The Quote Card on the right */
+.about-note-card {
+	background: #ffffff;
+	padding: 48px 40px;
+	border-radius: 32px;
+	border: 1px solid var(--border-color);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+	position: relative;
+	overflow: hidden;
+}
+
+.quote-mark {
+	font-family: var(--font-heading);
+	font-size: 8rem;
+	line-height: 0;
+	color: var(--accent-color);
+	position: absolute;
+	top: 50px;
+	left: 30px;
+	opacity: 0.15;
+}
+
+.note-text {
+	font-family: var(--font-heading);
+	font-size: 1.8rem;
+	line-height: 1.4;
+	color: var(--ink);
+	margin-bottom: 32px;
+	position: relative;
+	z-index: 1;
+}
+
+.note-caption {
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--ink-light);
+	position: relative;
+	z-index: 1;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 992px) {
+	.home-about-container {
+		grid-template-columns: 1fr;
+		gap: 60px;
+	}
+
+	.about-title {
+		font-size: 2.5rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.home-about-section {
+		padding: 60px 20px;
+	}
+
+	.about-title {
+		font-size: 2.2rem;
+	}
+
+	.about-note-card {
+		padding: 36px 24px;
+	}
+
+	.note-text {
+		font-size: 1.5rem;
+	}
+}

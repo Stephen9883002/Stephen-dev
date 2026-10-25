@@ -1,0 +1,70 @@
+.support-page-content {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 20px 100px;
+	display: flex;
+	justify-content: center;
+}
+
+.support-info-card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 32px;
+	padding: 60px;
+	text-align: center;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.support-icon-large {
+	width: 80px;
+	height: 80px;
+	background: rgba(232, 199, 185, 0.2);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 24px;
+}
+
+.support-icon-large .material-icons-sharp {
+	font-size: 40px;
+	color: #f59e0b; /* Gold */
+}
+
+.support-page-title {
+	font-family: var(--font-heading);
+	font-size: 2.5rem;
+	color: var(--ink);
+	margin-bottom: 16px;
+}
+
+.support-page-text {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: var(--ink-light);
+	margin-bottom: 40px;
+	max-width: 500px;
+}
+
+.support-page-btn {
+	padding: 16px 40px;
+	font-size: 1.1rem;
+}
+
+.support-page-btn .material-icons-sharp {
+	font-size: 20px;
+	color: #fbbf24;
+}
+
+@media (max-width: 768px) {
+	.support-info-card {
+		padding: 40px 20px;
+	}
+	.support-page-title {
+		font-size: 2rem;
+	}
+}
