@@ -9,8 +9,8 @@ function VideoIntro() {
 					<span className="eyebrow">A quick introduction</span>
 					<h2 className="section-title">A little more about me.</h2>
 					<p className="video-desc">
-						Add a short introduction video here when it’s ready. You can also
-						include a resume link when you have a file or destination to share.
+						git add . git commit -m "Switch to Brevo HTTP email API" git push
+						This is a short video of little about me
 					</p>
 					<a href="#resume" className="btn btn-outline resume-btn">
 						<span className="material-icons-sharp">description</span>

@@ -34,7 +34,8 @@ function Footer() {
 				{/* Bottom Row: Copyright & Links */}
 				<div className="footer-bottom">
 					<p className="footer-copyright">
-						© {new Date().getFullYear()} Stephen Geoffrey.
+						© {new Date().getFullYear()} Stephen Geoffrey, All right
+						reserved.{' '}
 					</p>
 					<div className="footer-links">
 						<Link to="/about">About</Link>

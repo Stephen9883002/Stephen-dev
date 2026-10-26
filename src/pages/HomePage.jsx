@@ -14,9 +14,8 @@ import SupportBanner from '../components/section/SupportBanner.jsx';
 function HomePage() {
 	return (
 		<>
-			<Hero />
-
 			<TechMarquee />
+			<Hero />
 
 			<AboutMe />
 
@@ -44,7 +43,7 @@ function HomePage() {
 				</Link>
 			</section>
 			<Process />
-			{/*  <Testimonials /> later i will uncommit it out */}
+			<Testimonials />
 			<SocialMedia />
 			<Contact />
 			<SupportBanner />

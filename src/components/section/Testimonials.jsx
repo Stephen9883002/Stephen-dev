@@ -4,23 +4,23 @@ const testimonials = [
 	{
 		quote:
 			'Stephen took our vague idea and turned it into a fully functional web app ahead of schedule. His attention to detail on the UI is unmatched.',
-		author: 'Sarah Jenkins',
-		role: 'Founder, TechFlow',
-		initials: 'SJ',
+		author: 'Prince Autos',
+		role: 'CEC Of Prince Autos',
+		initials: 'CEO',
 	},
 	{
 		quote:
 			"Working with Stephen was seamless. He doesn't just write code; he asks the right questions to ensure the product actually solves the business problem.",
-		author: 'David O.',
+		author: 'Rapheal Simon',
 		role: 'Product Manager',
-		initials: 'DO',
+		initials: 'PM',
 	},
 	{
 		quote:
 			"The best developer I've collaborated with. The code was clean, the handoff was perfect, and the site looks absolutely stunning on mobile.",
-		author: 'Amara K.',
+		author: 'Amara Kehinde',
 		role: 'Lead Designer, Studio X',
-		initials: 'AK',
+		initials: 'Ak',
 	},
 ];
 
