@@ -33,6 +33,8 @@ function Contact() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setStatus('loading');
+		const controller = new AbortController();
+		const timeoutId = setTimeout(() => controller.abort(), 60000);
 
 		try {
 			const res = await fetch(
@@ -41,9 +43,10 @@ function Contact() {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(formData),
+					signal: controller.signal,
 				},
 			);
-
+			clearTimeout(timeoutId);
 			if (!res.ok) throw new Error('Failed to send');
 
 			setStatus('success');
@@ -148,7 +151,7 @@ function Contact() {
 							className="submit-btn"
 							disabled={status === 'loading'}
 						>
-							{status === 'loading' ? 'Sending...' : 'Send message'}
+							{status === 'loading' ? 'Sending... (Wait)' : 'Send message'}
 							<span className="material-icons-sharp">arrow_forward</span>
 						</button>
 
@@ -163,11 +166,18 @@ function Contact() {
 								Message sent successfully! I'll get back to you soon.
 							</p>
 						)}
-						{status === 'error' && (
+						{/* {status === 'error' && (
 							<p
 								style={{ color: 'red', marginTop: '10px', fontSize: '0.9rem' }}
 							>
 								Something went wrong. Please try again.
+							</p>
+						)} */}
+						{status === 'error' && (
+							<p
+								style={{ color: 'red', marginTop: '10px', fontSize: '0.9rem' }}
+							>
+								Network error. Please refresh the page and try again.
 							</p>
 						)}
 					</div>

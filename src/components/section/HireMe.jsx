@@ -60,6 +60,8 @@ function HireMe() {
 			projectType: selectedType,
 			contactPreference: contactPref,
 		};
+		const controller = new AbortController();
+		const timeoutId = setTimeout(() => controller.abort(), 60000);
 
 		try {
 			const res = await fetch(
@@ -68,14 +70,17 @@ function HireMe() {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(payload),
+					signal: controller.signal,
 				},
 			);
+			clearTimeout(timeoutId);
 
 			if (!res.ok) throw new Error('Failed to send');
 
 			setStatus('success');
 			setFormData({ name: '', email: '', phone: '', message: '' });
 		} catch (err) {
+			clearTimeout(timeoutId);
 			console.error(err);
 			setStatus('error');
 		}
@@ -228,7 +233,9 @@ function HireMe() {
 							className="submit-btn"
 							disabled={status === 'loading'}
 						>
-							{status === 'loading' ? 'Sending...' : 'Send Request'}
+							{status === 'loading'
+								? 'Sending... (Please wait)'
+								: 'Send Request'}
 							<span className="material-icons-sharp">arrow_forward</span>
 						</button>
 
@@ -243,11 +250,19 @@ function HireMe() {
 								Request sent! I'll review your project and get back to you.
 							</p>
 						)}
-						{status === 'error' && (
+						{/* {status === 'error' && (
 							<p
 								style={{ color: 'red', marginTop: '15px', fontSize: '0.9rem' }}
 							>
 								Something went wrong. Please try again.
+							</p>
+						)} */}
+						{status === 'error' && (
+							<p
+								style={{ color: 'red', marginTop: '15px', fontSize: '0.9rem' }}
+							>
+								Network error. Please refresh the page and try again. (please
+								wait...).
 							</p>
 						)}
 					</div>

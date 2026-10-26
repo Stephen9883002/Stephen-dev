@@ -34,6 +34,8 @@ function SupportModal({ isOpen, onClose, initialAmount = '' }) {
 		}
 
 		setIsProcessing(true);
+		const controller = new AbortController();
+		const timeoutId = setTimeout(() => controller.abort(), 60000);
 
 		try {
 			// Connect to our new Express Backend
@@ -48,10 +50,11 @@ function SupportModal({ isOpen, onClose, initialAmount = '' }) {
 						amount: Number(amount),
 						email: email,
 						name: name,
+						signal: controller.signal,
 					}),
 				},
 			);
-
+			clearTimeout(timeoutId);
 			const data = await response.json();
 
 			if (!response.ok) {
@@ -61,7 +64,17 @@ function SupportModal({ isOpen, onClose, initialAmount = '' }) {
 			// Redirect the user to the Paystack Checkout page
 			window.location.href = data.authorization_url;
 		} catch (err) {
-			setError(err.message || 'Something went wrong.  Abeg try again.');
+			clearTimeout(timeoutId);
+			// 	setError(err.message || 'Something went wrong.  Abeg try again.');
+			// 	setIsProcessing(false);
+			// }
+			if (err.name === 'AbortError') {
+				setError('Server error. Please refresh the page and try again.');
+			} else if (err.message.includes('fetch')) {
+				setError('Network error. Please check your connection and refresh.');
+			} else {
+				setError(err.message || 'Something went wrong. Please refresh.');
+			}
 			setIsProcessing(false);
 		}
 	};
@@ -152,8 +165,16 @@ function SupportModal({ isOpen, onClose, initialAmount = '' }) {
 						className="support-submit-btn"
 						disabled={isProcessing}
 					>
-						{isProcessing ? (
+						{/* {isProcessing ? (
 							'Securing Payment...'
+						) : (
+							<>
+								<span className="material-icons-sharp">favorite</span>
+								Support with ₦{amount ? Number(amount).toLocaleString() : '0'}
+							</>
+						)} */}
+						{isProcessing ? (
+							'Sending... (This may take 50s)'
 						) : (
 							<>
 								<span className="material-icons-sharp">favorite</span>
