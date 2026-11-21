@@ -9,7 +9,7 @@ const techStack = [
 	{ name: 'Tailwind', icon: 'brush' },
 	{ name: 'Git', icon: 'account_tree' },
 	{ name: 'Figma', icon: 'design_services' },
-	{ name: 'Python', icon: 'terminal' },
+	{ name: 'Next.js', icon: 'terminal' },
 	{ name: 'Docker', icon: 'view_in_ar' },
 ];
 
