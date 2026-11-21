@@ -27,25 +27,26 @@ html {
 	min-width: 320px;
 	scroll-behavior: smooth;
 }
-/* 
-body {
-	min-width: 320px;
-	margin: 0;
-	background: var(--paper);
-	color: var(--ink);
-	font-family: var(--font-body);
-	-webkit-font-smoothing: antialiased;
-} */
 
 body {
 	background-color: #f9f8f5;
-	background-image: url('/images/portfolio-background.webp');
+	background-image: url('/images/hero-background.webp');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
+/* body {
+	margin: 0;
+	min-height: 100vh;
 
+	background-color: #fdf9f2;
+	background-image: url('/images/hero-background.webp');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+} */
 button,
 a {
 	font: inherit;
